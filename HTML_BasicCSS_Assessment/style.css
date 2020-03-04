@@ -1,9 +1,13 @@
+/*exact values for fonts, font sizes and padding may vary from the correct version
+very difficult to tell from picture what is correct*/
 body {
   background-color: #79B9C6;
+  /*eyedroping tool in paint used to get value*/
   color: white;
   text-align: center;
-  font-family: sans-serif; 
+  font-family: sans-serif;
   font-weight: bold;
+  /* this is close to the correct font but probably not exactly*/
   
 
 }
@@ -26,6 +30,9 @@ h3 {
 }
 .center{
   padding: 50px;
+  /*500 ways to do this correctly but they depend on
+   the coding standards you're working in, since we haven't
+   spoken on this topic I have no example code to base this off of*/
 }
 .btn {
   border-style: solid;
