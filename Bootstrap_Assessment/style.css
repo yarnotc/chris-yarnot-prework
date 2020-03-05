@@ -4,9 +4,7 @@ body {
   background-color: #79B9C6;
   /*eyedroping tool in paint used to get value*/
   color: white;
-  text-align: center;
-  font-family: sans-serif;
-  font-weight: bold;
+  font-family: 'Montserrat',sans-serif;
 }
 .jumbotron{
   background-color: transparent;
