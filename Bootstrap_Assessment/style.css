@@ -7,41 +7,10 @@ body {
   text-align: center;
   font-family: sans-serif;
   font-weight: bold;
-  /* this is close to the correct font but probably not exactly*/
-  
-
 }
-
-
-h1 {
-  text-align: left;
-  padding: 4px;
-  font-size: 14px;
-}
-section {
-  margin: auto;  
-  color: black;
-  font-size: 12px;
-}
-h2 {
-  padding: 36px;
-  font-size: 48px;
-}
-.center{
-  position: fixed;
-  top: calc(50% - 72px);
-  /*50% of the window's height minus half the height of the box*/
-  width: 100%;
-  /*this centering solution is based off of the new tab sceen in chrome
-   works fairly well*/
-}
-.btn {
-  border-style: solid;
-  border-radius: 4px; 
+.jumbotron{
   background-color: transparent;
-  padding: 8px;
-  border-color: white;
-  color: white;
-  font-size: 12px;
-  cursor: pointer;
+}
+.btn{
+  
 }
