@@ -18,21 +18,22 @@ h1 {
   padding: 4px;
   font-size: 14px;
 }
-h2 {
+section {
   margin: auto;  
   color: black;
-  font: Big;
   font-size: 12px;
 }
-h3 {
+h2 {
   padding: 36px;
   font-size: 48px;
 }
 .center{
-  padding: 50px;
-  /*500 ways to do this correctly but they depend on
-   the coding standards you're working in, since we haven't
-   spoken on this topic I have no example code to base this off of*/
+  position: fixed;
+  top: calc(50% - 72px);
+  /*50% of the window's height minus half the height of the box*/
+  width: 100%;
+  /*this centering solution is based off of the new tab sceen in chrome
+   works fairly well*/
 }
 .btn {
   border-style: solid;
