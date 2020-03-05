@@ -19,7 +19,7 @@ body {
    so that things don't get hidden by the nav bar*/
   width: 100%;
   padding: 2px;
-  color: transparent;
+  visibility: hidden;
 }
 #left,#right{
   margin-top: 20px;
