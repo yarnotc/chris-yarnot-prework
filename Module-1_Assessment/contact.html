@@ -14,7 +14,9 @@
 <body>
   <div class="head">
     <nav class="navbar navbar-expand-lg container">
-      <a class="navbar-brand">Chris Yarnot</a>
+      <div class="navbar-brand">
+        <h1>Chris Yarnot</h1>
+      </div>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="index.html">About</a>
@@ -29,9 +31,30 @@
       </div>
     </nav>
   </div>
-  <div class="container jumbotron">
+  <div class="container jumbotron overflow-auto">
+    <h1>Contact</h1>
+    <form> 
+      <div class="form-group">
+        <label for="InputName">Name</label>
+        <input class="form-control" id="InputName" placeholder="John Smith">
+      </div>
+      <div class="form-group">
+        <label for="InputEmail">Email</label>
+        <input type="email" class="form-control" id="InputEmail" placeholder="example@gmail.com">
+      </div>
+      <div class="form-group">
+        <label for="InputMessage">Message</label>
+        <textarea class="form-control" id="InputMessage" min-rows=2>Nothing in the requirements said we had to make this functional</textarea>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+
+    
+
+
   </div>
-  <footer>
+  <footer class="footer">
     <a>Copyright©</a>
   </footer>
 </body>
