@@ -1,0 +1,46 @@
+* {
+    border-radius: 0 !important;
+}
+html{
+    height: 100%;
+}
+body {
+    /*
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/y-so-serious.png);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-size: cover;
+}
+.head,.navbar{
+    padding: 0px;
+    background-color: #FFFFFF;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
+.navbar-brand {
+    background-color: #4aaaa5;
+    color: #FFFFFF;
+    min-height: 100% !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 3;
+
+}
+.container{
+    max-width: 960px;
+}
+@media screen and (min-width: 575px){
+    .profile{
+        max-width:25%;
+        height: auto;
+    }
+}
+@media screen and (max-width:575px){
+  .profile{
+      max-width: 135px;
+      height: auto;
+  }  
+}
