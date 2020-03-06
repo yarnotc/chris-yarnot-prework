@@ -9,9 +9,9 @@ body {
     background-image: url(../images/y-so-serious.png);
     
     height: 100%;
-  
     background-position: center;
     background-size: cover;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 }
 .head,.navbar{
     padding: 0px;
@@ -22,6 +22,10 @@ body {
     position: relative;
     min-height: 70px;
 }
+h1{
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
+
 .navbar-brand {
     background-color: #4aaaa5;
     color: #FFFFFF;
@@ -36,6 +40,7 @@ body {
 .container{
     max-width: 960px;
 }
+
 @media screen and (min-width: 575px){
     .profile{
         max-width:25%;
