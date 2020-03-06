@@ -5,30 +5,34 @@ html{
     height: 100%;
 }
 body {
-    /*
-    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/y-so-serious.png);
-  
-    /* Full height */
+    
+    background-image: url(../images/y-so-serious.png);
+    
     height: 100%;
   
-    /* Center and scale the image nicely */
     background-position: center;
     background-size: cover;
 }
 .head,.navbar{
     padding: 0px;
     background-color: #FFFFFF;
+    overflow: auto;
     font-family: 'Georgia', Times, Times New Roman, serif;
+    /*georgia is a font you have to pay for*/
+    position: relative;
+    min-height: 70px;
 }
 .navbar-brand {
     background-color: #4aaaa5;
     color: #FFFFFF;
-    min-height: 100% !important;
+    top: 0;
+    bottom: 0;
     padding-left: 20px;
     padding-right: 20px;
-    line-height: 3;
+    position: absolute;
 
 }
+
 .container{
     max-width: 960px;
 }
