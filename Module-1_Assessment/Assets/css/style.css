@@ -1,4 +1,4 @@
-* {
+*{
     border-radius: 0 !important;
 }
 html{
@@ -12,12 +12,13 @@ body {
     background-position: center;
     background-size: cover;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777777;
+    /*Arial and Helvetica Neue are both fonts you need to pay for*/
 }
 .head,.navbar{
     padding: 0px;
     background-color: #FFFFFF;
     overflow: auto;
-    font-family: 'Georgia', Times, Times New Roman, serif;
     /*georgia is a font you have to pay for*/
     position: relative;
     min-height: 70px;
@@ -40,16 +41,52 @@ h1{
 .container{
     max-width: 960px;
 }
-
-@media screen and (min-width: 575px){
-    .profile{
-        max-width:25%;
-        height: auto;
+.profile{
+    /* my own profile picture*/
+  max-width:25%;
+  /*an arbitrary size before it becomes to small to be recognized*/
+  min-width:135px;
+  height: auto;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+/*bars between nav-items*/
+.nav-item{
+   padding-left: 10px;
+    padding-right: 10px;
+}
+.jumbotron{
+    padding: 2rem;
+}
+.title{
+    color: #4aaaa5;
+    padding-bottom: 1.5rem;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    margin-bottom: 1.5rem;
+    border-bottom-color: #cccccc;
+}
+@media screen and (max-width: 991px){
+    /*when the navbar stacks horizontally*/
+    .navbar-brand{
+        padding-top: 35px;
+    }
+    .nav-item + .nav-item{
+        /*create those bars between nav-items*/
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top-color: #cccccc;
     }
 }
-@media screen and (max-width:575px){
-  .profile{
-      max-width: 135px;
-      height: auto;
-  }  
+@media screen and (min-width:992px){
+    /*when the navbar stacks vertically*/
+    .navbar-brand{
+        padding-top: .9px;
+    }
+    .nav-item + .nav-item{
+        /*create those bars between nav-items*/
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-left-color: #cccccc;
+    }
 }
