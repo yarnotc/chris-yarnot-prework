@@ -87,7 +87,32 @@ footer{
     padding-top: 1rem;
     border-top-width: 0.5rem;
 }
+.port-entry{
+    width: 30%;
+    min-width: 135px;
+    max-width: 300px;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 15px;
+    padding-left:0;
+    padding-right:0;
+}
 
+.port-img{
+    width: 100%;
+}
+.port-text{
+    width: 100%;
+    position: absolute;
+    height:30%;
+    bottom: 5%;
+    padding-top:calc(15% - 12px);
+    font-size:  larger;
+    text-align: center;
+    background-color: #4aaaa5;
+    color: #FFFFFF;
+    
+}
 @media screen and (max-width: 991px){
     /*when the navbar stacks horizontally*/
     .navbar-brand{
