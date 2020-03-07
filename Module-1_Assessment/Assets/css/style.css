@@ -19,14 +19,12 @@ body {
     padding: 0px;
     background-color: #FFFFFF;
     overflow: auto;
-    /*georgia is a font you have to pay for*/
     position: relative;
     min-height: 70px;
 }
 h1{
     font-family: 'Georgia', Times, Times New Roman, serif;
 }
-
 .navbar-brand {
     background-color: #4aaaa5;
     color: #FFFFFF;
@@ -39,7 +37,7 @@ h1{
 }
 
 .profile{
-    /* my own profile picture*/
+  /* my own profile picture*/
   max-width:30%;
   /*an arbitrary size before it becomes to small to be recognized*/
   min-width:150px;
@@ -47,10 +45,10 @@ h1{
   padding-right: 2rem;
   padding-bottom: 2rem;
 }
-/*bars between nav-items*/
+
 .nav-item{
    padding-left: 10px;
-    padding-right: 10px;
+   padding-right: 10px;
 }
 .nav-link{
     color: #777777;
@@ -65,6 +63,7 @@ h1{
     background-color: #ffffff;
 }
 .title{
+    /*this is a title for sections*/
     color: #4aaaa5;
     padding-bottom: 1.5rem;
     border-bottom-style: solid;
@@ -87,11 +86,13 @@ footer{
     font-size: x-small;
 }
 ul{
+    /*list entries should lose their style attributes*/
     list-style-type: none;
     padding-left: 0px;
 }
 .port-entry{
-    max-width: 300px;
+    /*a portfolio entry*/
+    max-width: 400px;
     min-width: 250px;
     margin-right: 15px;
     margin-left: 15px;
@@ -101,21 +102,44 @@ ul{
 }
 
 .port-img{
+    /*the picture for a portfolio entry*/
     width: 100%;
 }
+/*
+in an older build this was a class for <p> however is now for the parent <div>s
+this allows hidden descriptions to appear when hovering over an element
+*/
 .port-text{
+    /*the box on top of pictures on the portfolio page containing all the text*/
     width: 100%;
     position: absolute;
-    height:25%;
-    bottom: 5%;
     padding-top:calc(10% - 12px);
+    padding-bottom: calc(10% - 12px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    bottom: 12%;
+    background-color: #4aaaa5;
+    text-align: center;
+}
+.port-text p{
+    /*text which appears inside the boxes on the portfolio page*/
+    color: #FFFFFF;
+    margin-bottom:0;
+    /*prevents weird spacing with hidden <p>*/
     font-size:  larger;
     text-align: center;
-    background-color: #4aaaa5;
-    color: #FFFFFF;
-    
+}
+.port-desc{
+    /*the hidden text which appears when you hover over a portfolio entry*/
+    display: none;
+    font-size: smaller;
+}
+
+.port-entry:hover .port-desc{
+    display: initial;/*make the hidden text appear when you hover over any part of the portfolio entry*/
 }
 .btn{
+    /*the submit button on the contacts page*/
     background-color: #4aaaa5;
     color: #FFFFFF;
     padding-left: 1rem;
