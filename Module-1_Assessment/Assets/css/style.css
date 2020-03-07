@@ -11,7 +11,7 @@ body {
     height: 100%;
     background-position: center;
     background-size: cover;
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     color: #777777;
     /*Arial and Helvetica Neue are both fonts you need to pay for*/
 }
@@ -89,9 +89,12 @@ footer{
     border-top-width: 0.5rem;
     font-size: x-small;
 }
+ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
 .port-entry{
-    width: 30%;
-    min-width: 135px;
+    min-width: 200px;
     max-width: 300px;
     margin-right: 15px;
     margin-left: 15px;
@@ -106,9 +109,9 @@ footer{
 .port-text{
     width: 100%;
     position: absolute;
-    height:30%;
+    height:25%;
     bottom: 5%;
-    padding-top:calc(15% - 12px);
+    padding-top:calc(10% - 12px);
     font-size:  larger;
     text-align: center;
     background-color: #4aaaa5;
