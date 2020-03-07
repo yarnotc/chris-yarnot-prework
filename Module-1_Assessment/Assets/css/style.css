@@ -119,6 +119,7 @@ this allows hidden descriptions to appear when hovering over an element
     padding-right: 1rem;
     bottom: 12%;
     background-color: #4aaaa5;
+    font-size:  larger;
     text-align: center;
 }
 .port-text p{
@@ -126,7 +127,6 @@ this allows hidden descriptions to appear when hovering over an element
     color: #FFFFFF;
     margin-bottom:0;
     /*prevents weird spacing with hidden <p>*/
-    font-size:  larger;
     text-align: center;
 }
 .port-desc{
