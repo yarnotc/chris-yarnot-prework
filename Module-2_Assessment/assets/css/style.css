@@ -10,6 +10,9 @@ body {
     color: #bbbbbb;
     /*Arial and Helvetica Neue are both fonts you need to pay for*/
 }
+.magic_bar{
+    width: 24px;
+}
 footer{
     position: fixed;
     bottom: 0;

@@ -37,7 +37,10 @@
         <div class="row" id="guessed"></div>
       </div>
       <div class="health_bar col">
-        <span id="remaining row">Guesses remaining: 10/10</span>
+        <div class="row health_text">
+          <span>Guesses remaining:</span>
+          <span id="remaining">10/10</span>
+        </div>
         <div class="health row" id="health">
           <img src="assets/images/heart.png">
           <img src="assets/images/heart.png">
@@ -52,8 +55,8 @@
         </div>
       </div>
       <div class="magic_bar col-sm-1">
-        <img class="row" src="assets/images/win.png">
-        <img class="row" src="assets/images/loss.png">
+        <span class="row">W/L</span>
+        <span class="row" id="winsCounter">0/0</span>
       </div>
     </div>
   </div>
