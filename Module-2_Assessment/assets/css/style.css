@@ -1,0 +1,25 @@
+
+body {
+    /*going for a similar astetic to the steam-store page to fit with the theme of indie games*/
+    background-image: url(../images/background.png);
+    /*a simple blue gradiant much like the steam store page*/
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    color: #bbbbbb;
+    /*Arial and Helvetica Neue are both fonts you need to pay for*/
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    color: #cccccc;
+    width: 100%;
+    background-color: #292D32;
+    border-top-color: #111155;
+    border-top-style: solid;
+    padding-top: 1rem;
+    border-top-width: 1px;
+    font-size: x-small;
+}

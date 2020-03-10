@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="Assets/css/style.css">
+
+</head>
+
+<body>
+  <h1>Indie Game Hangman</h1>
+  <div class="container">
+    <div id="winLoseMessage" class="winLoseMessage hidden">
+      <img id="winLoseImg" class="winLoseImg" />
+      <h2 id="winLoseMessage">Congrats</h2>
+      <p id="winLoseDetails">You are a dingus!</p>
+    </div>
+    <div class="winLoss row">
+      <div class="col">
+        <span class="row">wins:</span>
+        <span class="row" id="wins">0</span>
+      </div>
+      <div class="col">
+        <span class="row">losses:</span>
+        <span class="row" id="losses">0</span>
+      </div>
+    </div>
+    <div class="game row">
+      <div class="play_area col">
+        <div class="word row" id="word"></div>
+        <span class="row">Guessed Letters:</span>
+        <div class="row" id="guessed"></div>
+      </div>
+      <div class="health_bar col">
+        <span id="remaining row">Guesses remaining: 10/10</span>
+        <div class="health row" id="health">
+          <img src="assets/images/heart.png">
+          <img src="assets/images/heart.png">
+          <img src="assets/images/heart.png">
+          <img src="assets/images/heart.png">
+          <img src="assets/images/heart.png">
+          <img src="assets/images/heart.png">
+          <img src="assets/images/heart.png">
+          <img src="assets/images/heart.png">
+          <img src="assets/images/heart.png">
+          <img src="assets/images/emptyheart.png">
+        </div>
+      </div>
+      <div class="magic_bar col-sm-1">
+        <img class="row" src="assets/images/win.png">
+        <img class="row" src="assets/images/loss.png">
+      </div>
+    </div>
+  </div>
+
+  <footer>Copyright©</footer>
+  <script src="assets/javascript/game.js"></script>
+</body>
+
+</html>
