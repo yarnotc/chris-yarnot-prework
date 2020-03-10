@@ -15,10 +15,9 @@
 <body>
   <h1>Indie Game Hangman</h1>
   <div class="container">
-    <div id="winLoseMessage" class="winLoseMessage">
-      <img id="winLoseImg" class="winLoseImg" />
-      <h2 id="winLoseMessage">Press any button to begin.</h2>
-      <p id="winLoseDetails"></p>
+    <div class="winLoseMessage">
+      <h2 id="winLoseMessage">Press any key to get started!</h2>
+      <div id="winLoseDetails"></div>
     </div>
     <div class="winLoss row">
       <div class="col">
@@ -41,27 +40,21 @@
           <span>Guesses remaining:</span>
           <span id="remaining">10/10</span>
         </div>
-        <div class="health row" id="health">
-          <img src="assets/images/heart.png">
-          <img src="assets/images/heart.png">
-          <img src="assets/images/heart.png">
-          <img src="assets/images/heart.png">
-          <img src="assets/images/heart.png">
-          <img src="assets/images/heart.png">
-          <img src="assets/images/heart.png">
-          <img src="assets/images/heart.png">
-          <img src="assets/images/heart.png">
-          <img src="assets/images/emptyheart.png">
+        <div class="heartEmpty row">
+          <div class="heartFull" id="health"></div>
         </div>
       </div>
       <div class="magic_bar col-sm-1">
         <span class="row">W/L</span>
-        <span class="row" id="winsCounter">0/0</span>
+        <span class="row" id="winLoseCounter">0/0</span>
+        <div class="row magicLose" id="manaEmpty">
+          <div class="magicWin" id="manaFull"></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <footer>Copyright©</footer>
+  <footer></footer>
   <script src="assets/javascript/game.js"></script>
 </body>
 

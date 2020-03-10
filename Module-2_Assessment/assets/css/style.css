@@ -11,7 +11,27 @@ body {
     /*Arial and Helvetica Neue are both fonts you need to pay for*/
 }
 .magic_bar{
-    width: 24px;
+    
+}
+.magicWin {
+    background-image: url(../images/win.png);
+    width: 100%;
+    background-position: top;
+}
+.magicLose{
+    background-image: url(../images/loss.png);
+    width: 22px;
+    background-position: top;
+}
+.heartFull{
+    background-image: url(../images/heart.png);
+    height: 21px;
+    background-position: left;
+}
+.heartEmpty{
+    background-image: url(../images/emptyheart.png);
+    width: 220px;
+    background-position: left;
 }
 footer{
     position: fixed;
@@ -22,7 +42,7 @@ footer{
     background-color: #292D32;
     border-top-color: #111155;
     border-top-style: solid;
-    padding-top: 1rem;
+    padding-top: 0rem;
     border-top-width: 1px;
     font-size: x-small;
 }

@@ -1,14 +1,29 @@
 //#DEFINES
-const MAXIMUM_GUESSES=  10;
+const MAXIMUM_GUESSES=  10; //number of wrong guesses before a loss
+const MAXIMUM_MANA= 10; //maximum number of stars on the magic bar 
+const MANA_HEIGHT= 24;  //height per mana.
+const HEART_WIDTH= 22;
 
 //document constants
 const docWinCounter=    document.querySelector("#wins");
 const docLoseCounter=   document.querySelector("#losses");
+// [wins]/[losses]
+const docWLCounter=      document.querySelector("#winLoseCounter");
+//the word/phrase in the play area "_ O _ _ O _   _ N I G H T"
 const docWord=          document.querySelector("#word");
+//the list of incorrectly guessed letters
 const docGuessed=       document.querySelector("#guessed");
+//the number of remaining guesses before a loss
 const docRemainCounter= document.querySelector("#remaining");
+//decorative health bar (controlled by reamining guesses)
 const docHealthBar=     document.querySelector("#health");
-const docManaBar=       document.querySelector("#mana");
+//decorative mana bar (controlled by wins losses)
+const docManaBarFull=   document.querySelector("#manaFull");
+const docManaBarEmpty=  document.querySelector("#manaEmpty");
+//Congrats/too bad! the phrase was [phrase]
+const docWinLoseMess=   document.querySelector("#winLoseMessage");
+
+const docWinLoseDet=    document.querySelector("#winLoseDetails");
 
 class word{
     val= "";
@@ -100,7 +115,8 @@ function stringToHTML(str){
 //game
 const game = {
     //variables
-    currentWord:    new word("Hollow Knight","Hollow Knight is an indie game."),
+    currentWord:    new word("Hollow Knight","<span>Hollow Knight is an indie game.</span>"),
+    possibleWords:  [],
     wins:           0,
     losses:         0,
     guessRemain:    MAXIMUM_GUESSES,
@@ -108,19 +124,11 @@ const game = {
     rightLetters:   "",
     //update things that change when you're wrong:
     //healthbar, remaining counter, and guessed letters
-    updateWrong(){
+    updateWrong: function(){
         //iterate 0->MAX_GUESSES
-        let innerHTML= "";
-        for(let i= 0; i<MAXIMUM_GUESSES; i++){
-            //add a full heart if i < remaining guesses and empty otherwise
-            innerHTML= innerHTML + "<img src=\"assets/images/";
-            if(i > this.guessRemain){
-                innerHTML= innerHTML + "empty";
-            }
-            innerHTML= innerHTML + "heart.png\" class=\"hp\">";
-        }
+        
         //update the document
-        docHealthBar.innerHTML= innerHTML;
+        docHealthBar.style.width= (this.guessRemain* HEART_WIDTH) + "px";
         //update remaining guesses counter
         docRemainCounter.innerText= " " + this.guessRemain + "/" + MAXIMUM_GUESSES;
         //update guessed letters
@@ -130,22 +138,47 @@ const game = {
     },
     //update things that change when you're right:
     //the word
-    updateRight(){
+    updateRight : function(){
         //convert word to displayable series of underscores/characters
         let str= this.currentWord.toHangman(this.rightLetters);
         //convert word to pictures
         //update word display
         docWord.innerHTML= stringToHTML(str);
     },
+    //this isn't necessary for the game to work but it'll look nice
+    updateMagicBar : function(){
+        //update the W/L at the top
+        docWLCounter.innerText= this.wins + "/" + this.losses;
+        let games= this.wins + this.losses;
+        //if fewer games than MAX_MANA have been played 
+        
+        //set height to be propotional to wins
+        docManaBarFull.style.height= (this.wins*100/games)+"%";
+        if(games < MAXIMUM_MANA){
+            //make the # of stars total= to the number of games
+            docManaBarEmpty.style.height= (MANA_HEIGHT * games) + "px";
+        }else{
+            //make the # of stars MAX_MANA
+            docManaBarEmpty.style.height= (MANA_HEIGHT * MAXIMUM_MANA) + "px";
+        }
+    },
 
     //(re)start
     start : function() {
         //set all values to default
-        this.wrongLetters=  "",
-        this.rightLetters=  "",
-        this.guessRemain= MAXIMUM_GUESSES,
+        this.wrongLetters=  "";
+        this.rightLetters=  "";
+        this.guessRemain= MAXIMUM_GUESSES;
 
         //pick a random word
+        if(this.possibleWords.length > 1){
+            let rand= Math.random()* this.possibleWords.length;
+            rand= Math.floor(rand);
+            if(rand>= this.possibleWords.length){
+                this.possibleWords.length;
+            }
+            this.currentWord= this.possibleWords[rand];
+        }
         //set game area to default
         this.updateWrong();
         this.updateRight();
@@ -189,23 +222,48 @@ const game = {
     //on win or loss
     onWinLose : function(hasWon){
         if(hasWon){
-            console.log("WINNER WINNER CHICKEN DINNER!!")
+            console.log("WINNER WINNER CHICKEN DINNER!!");
+            
             //update wins
+            this.wins ++;
+            docWinCounter.innerText= this.wins;
             //show congrats message
-            //play music?
+            docWinLoseMess.innerText= "Congrats! Your phrase was " + this.currentWord.val + "!";
+            //play music? 
+                //many music scripts for js seem to be queue based
+                //so the problem in the video is probably that the first song 
+                //was still playing when the second song started.
         } else {
-            console.log("TO BAD")
+            console.log("TO BAD");
             //update losses
+            this.losses ++;
+            docLoseCounter.innerText= this.losses;
             //show lose message
+            docWinLoseMess.innerText= "Too Bad! The phrase was " + this.currentWord.val + ".";
         }
         //show description
+        docWinLoseDet.innerHTML= this.currentWord.details;
+        this.updateMagicBar();
+        //restart game
+        this.start();
     }
 };
 //on startup
 
 //load words data from file? information
-//initialize win/lose count
-//(re)start game
+//initialize win/lose count (default values setup)
+var reader = new FileReader();
+reader.onload = function(event) {
+    var contents = event.target.result;
+    console.log("File contents: " + contents);
+};
+
+reader.onerror = function(event) {
+    console.error("File could not be read! Code " + event.target.error.code);
+};
+
+reader.readAsText("words");
 //add event listener
 window.addEventListener("keydown", onKeyDown);
+//(re)start game
 game.start();
