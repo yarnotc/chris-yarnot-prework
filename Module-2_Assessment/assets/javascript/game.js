@@ -23,8 +23,9 @@ class word{
         this.musicURL= "";
         this.musicDetails= "";
     }
+    //check to see if character is in word
     isInWord(c){
-        return (this.upperVal.indexOf(c.toUpperCase()) != -1);
+        return (this.upperVal.indexOf(c) != -1);
     }
     //convert word into a displayable series of underscores/characters
     toHangman(guessed){
@@ -36,7 +37,7 @@ class word{
                 //if theres a ' ' create space between underscores recognizable as a space
                 out= out + " ";
             }else if(guessed.indexOf(this.upperVal[i]) == -1){
-                //create blank if letter not guessed yet
+                //create "_" if letter not guessed yet
                 out= out + "_";
             }else{
                 //show letter has been guessed 
@@ -45,6 +46,20 @@ class word{
         }
         //return the output
         return out;
+    }
+    //check to see if the player has guessed all the characters
+    hasWon(guessed){
+        //add a " " to the guessed list
+        guessed= guessed + " ";
+        //iterate through the characters in val
+        for(let i= 0; i<this.upperVal.length; i++){
+            //if the character hasn't been guessed yet return false
+            if(guessed.indexOf(this.upperVal[i]) == -1){
+                return false;
+            }
+        }
+        //after iterating through all letters have been checked return true
+        return true;
     }
 }
 
@@ -68,7 +83,7 @@ function onKeyDown( event ){
 function stringToHTML(str){
     //initiallize the output
     let out= "<div class=\"letters row\">";
-    for(i=0; i<str.length; i++){
+    for(let i=0; i<str.length; i++){
         if(str[i] == " "){
             //if letter is a " " new line
             out= out + "</div><div class=\"letters row\">";
@@ -96,7 +111,7 @@ const game = {
     updateWrong(){
         //iterate 0->MAX_GUESSES
         let innerHTML= "";
-        for(i= 0; i<MAXIMUM_GUESSES; i++){
+        for(let i= 0; i<MAXIMUM_GUESSES; i++){
             //add a full heart if i < remaining guesses and empty otherwise
             innerHTML= innerHTML + "<img src=\"assets/images/";
             if(i > this.guessRemain){
@@ -108,9 +123,9 @@ const game = {
         docHealthBar.innerHTML= innerHTML;
         //update remaining guesses counter
         docRemainCounter.innerText= " " + this.guessRemain + "/" + MAXIMUM_GUESSES;
-        //guessed letters
-        //convert string to pictures
-        //update guessed letters HTML
+        //update guessed letters
+         //convert string to pictures
+         //update guessed letters HTML
         docGuessed.innerHTML= stringToHTML(this.wrongLetters);
     },
     //update things that change when you're right:
@@ -135,39 +150,56 @@ const game = {
         this.updateWrong();
         this.updateRight();
     },
+    
+    //when a character is pressed
+    onCharacter : function(key){
+        //check if character was already checked
+        if((this.wrongLetters.indexOf(key) != -1) || (this.rightLetters.indexOf(key) != -1)){
+            return;
+        }
+        console.log(key);
+        //check if character is in word
+        if (this.currentWord.isInWord(key)){
+            //update characters
+            this.rightLetters= this.rightLetters + key;
+            //update stuff that changes when you get a letter right
+            this.updateRight();
+            if(this.currentWord.hasWon(this.rightLetters)){
+                //call win
+                this.onWinLose(true);
+            }else{
+                this.updateRight();
+            }
+        } else {
+            //subtract 1 from letters remaining
+            this.guessRemain--;
+            //check if letters remaining is 0
+            if(this.guessRemain == 0) {
+                //call loss
+                this.onWinLose(false);
+            }else{
+                //update guessed letters and letters remaining
+                this.wrongLetters= this.wrongLetters + key;
+                this.updateWrong();
+            }
+
+        }
+    },
+
     //on win or loss
     onWinLose : function(hasWon){
         if(hasWon){
+            console.log("WINNER WINNER CHICKEN DINNER!!")
             //update wins
             //show congrats message
             //play music?
         } else {
+            console.log("TO BAD")
             //update losses
             //show lose message
         }
         //show description
-    },
-    //when a character is pressed
-    onCharacter : function(key){
-        console.log(key);
-        //check if character is in word
-        if (true){
-            //update word
-            //check if word is complete
-            if(true){
-                //call win
-            }
-        } else {
-            //subtract 1 from letters remaining
-            //update guessed letters and letters remaining
-            //check if letters remaining is 0
-            if(true) {
-                //call loss
-            }
-
-        }
     }
-
 };
 //on startup
 
