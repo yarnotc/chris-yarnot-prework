@@ -15,10 +15,10 @@
 <body>
   <h1>Indie Game Hangman</h1>
   <div class="container">
-    <div id="winLoseMessage" class="winLoseMessage hidden">
+    <div id="winLoseMessage" class="winLoseMessage">
       <img id="winLoseImg" class="winLoseImg" />
-      <h2 id="winLoseMessage">Congrats</h2>
-      <p id="winLoseDetails">You are a dingus!</p>
+      <h2 id="winLoseMessage">Press any button to begin.</h2>
+      <p id="winLoseDetails"></p>
     </div>
     <div class="winLoss row">
       <div class="col">
@@ -32,7 +32,7 @@
     </div>
     <div class="game row">
       <div class="play_area col">
-        <div class="word row" id="word"></div>
+        <div class="word col" id="word"></div>
         <span class="row">Guessed Letters:</span>
         <div class="row" id="guessed"></div>
       </div>

@@ -17,12 +17,12 @@ class word{
     //convert word into a displayable series of underscores
     toDisplay(guessed){
         //create default value for output
-        let out= "";
+        let out= "<div class=\"row\">";
         //iterate through the characters in val
         for(let i= 0; i<this.upperVal.length; i++){
             if(this.upperVal[i] == ' '){
                 //if theres a ' ' create space between underscores recognizable as a space
-                out= out + "<img src=\"assets/images/space.png\" class=\"letter\">";
+                out= out + "</div><div class=\"row\">";
             }else if(guessed.indexOf(this.upperVal[i]) == -1){
                 //create blank if letter not guessed yet
                 out= out + "<img src=\"assets/images/_.png\" class=\"letter\">";
@@ -32,7 +32,7 @@ class word{
             }
         }
         //return the output
-        return out+ "</span>";
+        return out+ "</div>";
     }
 
 }
