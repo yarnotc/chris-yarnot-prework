@@ -234,7 +234,7 @@ const game = {
             this.wins ++;
             docWinCounter.innerText= this.wins;
             //show congrats message
-            docWinLoseMess.innerText= "Congrats! Your phrase was " + this.currentWord.val + "!";
+            docWinLoseMess.innerText= "Congrats! The game was " + this.currentWord.val + "!";
             //play music? 
                 //many music scripts for js seem to be queue based
                 //so the problem in the video is probably that the first song 
@@ -245,7 +245,7 @@ const game = {
             this.losses ++;
             docLoseCounter.innerText= this.losses;
             //show lose message
-            docWinLoseMess.innerText= "Too Bad! The phrase was " + this.currentWord.val + ".";
+            docWinLoseMess.innerText= "Too Bad! The game was " + this.currentWord.val + ".";
         }
         //show description
         docWinLoseDet.innerHTML= this.currentWord.details;
