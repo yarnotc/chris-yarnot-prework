@@ -16,7 +16,7 @@
   <div class="container">
     <h2 class="winLoseMessage" id="winLoseMessage">Press any key to get started!</h2>
     <div class="game row">
-      <div class="col">
+      <div class="col play_area">
         <div class="health_bar">
           <div class="row">
             <span id="remaining" class="health_text">Guesses Remaining: 10/10</span>
@@ -25,21 +25,15 @@
             <div class="heartFull" id="health"></div>
           </div>
         </div>
-        <div class="play_area">
+        <div class="playmat">
           <span>Guess the Game:</span>
           <div class="word col" id="word"></div>
           <span class="row">Guessed Letters:</span>
           <div class="row col" id="guessed"></div>
         </div>
         <div class="scoreboard">
-          <div class="row">
-            <span>WINS:</span>
-            <span class="score" id="wins">0</span>
-          </div>
-          <div class="row">
-            <span>LOSSES:</span>
-            <span class="score" id="losses">0</span>
-          </div>
+          <div>WINS:<span class="score" id="wins">0</span></div>
+          <div>LOSSES:<span class="score" id="losses">0</span></div>
         </div>
       </div>
       <div class="magic_bar col-sm-1">
@@ -50,6 +44,7 @@
         </div>
       </div>
     </div>
+    <input type="text" placeholder="Bring up the keyboard!">
     <div id="winLoseDetails" class="details"></div>
   </div>
   <div class="hidden phraseCollection container">

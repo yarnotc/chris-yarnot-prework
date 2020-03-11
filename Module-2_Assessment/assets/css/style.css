@@ -29,6 +29,12 @@ body, .details {
     margin-right: auto;
     max-width: 75%;
 }
+.play_area{
+    padding:0px;
+}
+.playmat>span{
+    padding-left: 2rem;
+}
 .letters:only-child{
     min-height: 72px;
 }
@@ -51,6 +57,7 @@ body, .details {
     background-size: 216px 216px;
     background-position:Center;
     background-repeat: no-repeat;
+    padding-bottom: 1rem;
 }
 .hidden{
     display: None;
@@ -81,25 +88,6 @@ body, .details {
     margin-right: auto;
     width: auto;
 }
-.health_bar{
-    top: 0;
-    right: 20px;
-    position: absolute;
-}
-.scoreboard{
-    padding: 0.5rem;
-    background-color: #000000;
-    color: #bbbb55;
-    font-family: 'SevenSegment';
-    bottom: 0;
-    right: 25px;
-    min-width: 100px;
-    position: absolute;
-}
-.score{
-    text-justify: right;
-    margin-left: auto;
-}
 .heartFull{
     background-image: url(../images/heart.png);
     background-size: 44px;
@@ -111,6 +99,34 @@ body, .details {
     background-size: 44px;
     width: 440px;
     background-position: left;
+}
+.health_bar{
+    top: 0;
+    right: 0px;
+    position: absolute;
+}
+.scoreboard{
+    padding: 0.5rem;
+    background-color: #000000;
+    color: #bbbb55;
+    font-family: 'SevenSegment';
+    bottom: 0;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    min-width: 200px;
+    position: absolute;
+}
+input{
+    display: none;
+}
+.scoreboard>div{
+    width: 100%;
+}
+.score{
+    text-justify: right;
+    margin-left: auto;
+    float: right;
 }
 .descPic{
     max-height: 164px;
@@ -135,4 +151,68 @@ footer{
     padding-top: 0rem;
     border-top-width: 1px;
     font-size: x-small;
+}
+@media screen and (max-width:991px){
+    /*medium*/
+    .heartEmpty{
+        background-image: url(../images/emptyheart.png);
+        background-size: 22px;
+        width: 220px;
+        background-position: left;
+    }
+    .heartFull{
+        background-image: url(../images/heart.png);
+        background-size: 22px;
+        height: 22px;
+        background-position: left;
+    }
+}
+@media screen and (max-width: 767px){
+    /*small*/
+    /*health bar takes up its own row*/
+    .health_bar{
+        position: relative;
+        margin-left: auto;
+        width:220px;
+    }
+    .scoreboard{
+        position: relative;
+        width: 100%;
+        left: 0px;
+        bottom: 0px;
+    }
+    .scoreboard>div{
+        width: 50%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        float: left;
+    }
+}
+@media screen and (max-width: 575px){
+    /*extra small*/
+    .magic_bar{
+        display: none;
+    }
+    .letters:only-child{
+        min-height: 36px;
+    }
+    .letters{
+        min-height: 18px;
+    }
+    .letter{
+        width:22.5px;
+    }
+    input{
+        display: block;
+    }
+
+    .word{
+        width: fit-content;
+        min-width: 108px;
+        background-image: url(../images/spotlight.png);
+        background-size: 108px 108px;
+        background-position:Center;
+        background-repeat: no-repeat;
+        padding-bottom: 1rem;
+    }
 }
