@@ -129,7 +129,7 @@ const game = {
         //update the document
         docHealthBar.style.width= (this.guessRemain*100/MAXIMUM_GUESSES) + "%";
         //update remaining guesses counter
-        docRemainCounter.innerText= " " + this.guessRemain + "/" + MAXIMUM_GUESSES;
+        docRemainCounter.innerText= "Guesses Remaining: " + this.guessRemain + "/" + MAXIMUM_GUESSES;
         //update guessed letters
          //convert string to pictures
          //update guessed letters HTML
@@ -142,10 +142,12 @@ const game = {
         let str= this.currentWord.toHangman(this.rightLetters);
         //add spacers to center the word vertically
         if(str.indexOf(" ") == -1){
-            str= " "+ str;
+            //if the word has no spaces (takes up 1 row)
+            str= "  "+ str +"  ";
         }
         if(str.indexOf(" ") == str.lastIndexOf(" ")){
-            str= str + " ";
+            //if the word has 1 space (takes up 2 rows)
+            str= " " + str + " ";
         }
         //convert word to pictures
         //update word display
