@@ -1,9 +1,0 @@
-Note that not all of the activities are included.
-The module decription describes that the activities are optional,
-I skipped many of the ones for topics which I was comfortable with.
-Some of these Activities may be incomplete or modified post completion,
-since I used the code I made in these activities to test ideas,
-and didn't revert them to the version I would have if the activities were "graded"
-I intentionally am leaving the activities folder in the repository, so that you can
-see which activities I did, and when I went back to them to test ideas. 
-
