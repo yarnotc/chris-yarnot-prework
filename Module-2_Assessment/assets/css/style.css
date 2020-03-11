@@ -154,6 +154,7 @@ footer{
 }
 @media screen and (max-width:991px){
     /*medium*/
+    /*reduce the size of the health bar*/
     .heartEmpty{
         background-image: url(../images/emptyheart.png);
         background-size: 22px;
@@ -169,7 +170,7 @@ footer{
 }
 @media screen and (max-width: 767px){
     /*small*/
-    /*health bar takes up its own row*/
+    /*health bar  and scoreboard take up their own row*/
     .health_bar{
         position: relative;
         margin-left: auto;
@@ -202,6 +203,7 @@ footer{
     .letter{
         width:22.5px;
     }
+    /*cellphones need an imput feild to bring up the keyboard*/
     input{
         display: block;
     }
