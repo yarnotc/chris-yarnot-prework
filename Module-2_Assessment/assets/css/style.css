@@ -17,47 +17,12 @@ body, .details {
 .body{
     height: 100%;
 }
-.game{
-    background-size: 16px;
-    background-position:center;
-    /*background-image: url(../images/background.png);*/
-    background-color: #000000;
-}
+
 .title{
     display:block;
     margin-left: auto;
     margin-right: auto;
     max-width: 75%;
-}
-.play_area{
-    padding:0px;
-}
-.playmat>span{
-    padding-left: 2rem;
-}
-.letters:only-child{
-    min-height: 72px;
-}
-.letters{
-    min-height: 36px;
-}
-.letter{
-    width:45px;
-}
-.letter:first-of-type{
-    margin-left: auto;
-}
-.letter:last-of-type{
-    margin-right: auto;
-}
-.word{
-    width: fit-content;
-    min-width: 216px;
-    background-image: url(../images/spotlight.png);
-    background-size: 216px 216px;
-    background-position:Center;
-    background-repeat: no-repeat;
-    padding-bottom: 1rem;
 }
 .hidden{
     display: None;
@@ -65,46 +30,114 @@ body, .details {
 .row, .col{
     margin: 0px;
 }
+input{
+    display: none;
+}
+
+/*game containers*/
+.game{
+    /*entire "screen"*/
+    background-size: 16px;
+    background-position:center;
+    /*background-image: url(../images/background.png);*/
+    background-color: #000000;
+}
+.play_area{
+    /*screen without mana/scores*/
+    padding:0px;
+}
+.playmat>span{
+    /*text above the phrase*/
+    padding-left: 2rem;
+}
+
+/*the phrase the player is gussing*/
+.letter{
+    /*a single character takes up a pre-defined set of space*/
+    width:45px;
+}
+.letter:first-of-type{
+    /*center the characters in the row*/
+    margin-left: auto;
+}
+.letter:last-of-type{
+    /*center the characters in the row*/
+    margin-right: auto;
+}
+.letters{
+    /*a row of characters when empty takes up half the space
+    so that words can be centered by the js (default to 72px)*/
+    min-height: 36px;
+}
+.letters:only-child{
+    /*the row of guessed letters even when empty needs to take up the full row*/
+    min-height: 72px;
+}
+
+
+.word{
+    /*the entire phrase the player is guessing*/
+    width: fit-content;
+    min-width: 216px;
+        /*a nice spotlight to draw attention to the word*/
+    background-image: url(../images/spotlight.png);
+    background-size: 216px 216px;
+    background-position:Center;
+    background-repeat: no-repeat;
+    padding-bottom: 1rem;
+}
+
+/*the magic bar*/
 .magic_bar>span {
+    /*the text at the top of the mana-meter*/
     width: fit-content;
     margin-left:auto;
     margin-right:auto;
 }
 .magicWin {
+    /*an empty div with background image to give the appearance of a full mana-meter*/
     background-image: url(../images/win.png);
     width: 100%;
     background-position: top;
 }
 .magicLose{
+    /*an empty div with background image to give the appearance of an empty mana-meter*/
     background-image: url(../images/loss.png);
     width: 22px;
     background-position: top;
     margin-left:auto;
     margin-right:auto;
 }
+
+/*the healthbar*/
+.health_bar{
+    top: 0;
+    right: 0px;
+    position: absolute;
+}
 .health_text{
+    /*the label at the top of the healthbar "Guesses Remaining: #/#"*/
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: auto;
 }
 .heartFull{
+    /*an empty div with a background image to give the appearance of health*/
     background-image: url(../images/heart.png);
     background-size: 44px;
     height: 44px;
     background-position: left;
 }
 .heartEmpty{
+    /*An empty div with a background image to give the appearance of a drained healthbar*/
     background-image: url(../images/emptyheart.png);
     background-size: 44px;
     width: 440px;
     background-position: left;
 }
-.health_bar{
-    top: 0;
-    right: 0px;
-    position: absolute;
-}
+
+/*scoreboard*/
 .scoreboard{
     padding: 0.5rem;
     background-color: #000000;
@@ -117,17 +150,17 @@ body, .details {
     min-width: 200px;
     position: absolute;
 }
-input{
-    display: none;
-}
 .scoreboard>div{
+    /*each row of the score board*/
     width: 100%;
 }
 .score{
+    /*the number at the end of the score*/
     text-justify: right;
     margin-left: auto;
     float: right;
 }
+/*information about the phrase from the last round*/
 .descPic{
     max-height: 164px;
     max-width: 25%;
@@ -136,9 +169,9 @@ input{
     float: left;
 }
 .details{
-    overflow: auto;
-    
+    overflow: auto;   
 }
+/*footer*/
 footer{
     position: fixed;
     bottom: 0;
@@ -152,6 +185,8 @@ footer{
     border-top-width: 1px;
     font-size: x-small;
 }
+
+
 @media screen and (max-width:991px){
     /*medium*/
     /*reduce the size of the health bar*/
@@ -190,10 +225,12 @@ footer{
     }
 }
 @media screen and (max-width: 575px){
-    /*extra small*/
+    /*cell phones*/
+    /*remove the magic bar*/
     .magic_bar{
         display: none;
     }
+    /*make the phrase and guessed letters smaller*/
     .letters:only-child{
         min-height: 36px;
     }
@@ -203,11 +240,6 @@ footer{
     .letter{
         width:22.5px;
     }
-    /*cellphones need an imput feild to bring up the keyboard*/
-    input{
-        display: block;
-    }
-
     .word{
         width: fit-content;
         min-width: 108px;
@@ -217,4 +249,9 @@ footer{
         background-repeat: no-repeat;
         padding-bottom: 1rem;
     }
+    input{
+        /*cellphones need an input feild to bring up the keyboard*/
+        display: block;
+    }
+    
 }
