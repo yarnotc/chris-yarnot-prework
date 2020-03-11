@@ -15,33 +15,33 @@
 <body>
   <h1>Indie Game Hangman</h1>
   <div class="container">
-    <div class="winLoseMessage">
-      <h2 id="winLoseMessage">Press any key to get started!</h2>
-      <div id="winLoseDetails"></div>
-    </div>
+    <h2 class="winLoseMessage" id="winLoseMessage">Press any key to get started!</h2>
     <div class="winLoss row">
       <div class="col">
-        <span class="row">wins:</span>
-        <span class="row" id="wins">0</span>
+        <span>wins:</span>
+        <span id="wins">0</span>
       </div>
       <div class="col">
-        <span class="row">losses:</span>
-        <span class="row" id="losses">0</span>
+        <span>losses:</span>
+        <span id="losses">0</span>
       </div>
     </div>
     <div class="game row">
-      <div class="play_area col">
-        <div class="word col" id="word"></div>
-        <span class="row">Guessed Letters:</span>
-        <div class="row" id="guessed"></div>
-      </div>
-      <div class="health_bar col">
-        <div class="row health_text">
-          <span>Guesses remaining:</span>
-          <span id="remaining">10/10</span>
+      <div class="col">
+        <div class="play_area">
+          <span>Guess the Game:</span>
+          <div class="word col" id="word"></div>
+          <span class="row">Guessed Letters:</span>
+          <div class="row" id="guessed"></div>
         </div>
-        <div class="heartEmpty row">
-          <div class="heartFull" id="health"></div>
+        <div class="health_bar">
+          <div class="row health_text">
+            <span>Guesses remaining:</span>
+            <span id="remaining">10/10</span>
+          </div>
+          <div class="heartEmpty row">
+            <div class="heartFull" id="health"></div>
+          </div>
         </div>
       </div>
       <div class="magic_bar col-sm-1">
@@ -52,8 +52,232 @@
         </div>
       </div>
     </div>
+    <div id="winLoseDetails" class="details"></div>
   </div>
+  <div class="hidden phraseCollection container">
+    <!---- >the only reason that these aren't in a list is so that they show up the way they will when the game ends before I add .hidden to the css
+      you can remove them to see them at the bottom of the page
+      these descriptions are taken from wikipedia and the pictures are taken from the steam store page or the official website for the game/developer
+      the reason for doing this is because I think it looks nicer than just a picture. I could be wrong?
+      </!---->
+    <div id="phrase">Hollow Knight</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Hollow Knight.png" class="descPic">
+      <p class="desctext">Hollow Knight is a 2017 Metroidvania style video game. It was developed and published by Team Cherry.
+        The game was released for Microsoft Windows, macOS, and Linux in 2017, and for the Nintendo Switch, PlayStation 4, and Xbox One in 2018.
+        Development was partially funded through a Kickstarter crowdfunding campaign, raising over $57,000 by the end of 2014.
+        The game tells the story of an insectoid Knight on a quest to uncover the secrets of the long-abandoned insect kingdom of Hallownest, 
+        whose haunting depths draw in the adventurous and brave with promises of treasures and answers to ancient mysteries.
+        To progress through the game, the Knight must traverse areas in a nonlinear fashion, as well as find and fight bosses, which grant them additional abilities.</p>
+    </div>
+    <div id="phrase">Shovel Knight</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/shovel Knight.png" class="descPic">
+      <p class="descText">Shovel Knight is a 2D side-scrolling platform game developed and published by Yacht Club Games. 
+        Following a successful Kickstarter crowdfunding campaign, the game was released for Microsoft Windows, Nintendo 3DS and Wii U in June 2014. 
+        Shovel Knight is inspired by gameplay and graphics of platformer games developed for the Nintendo Entertainment System.
+        The game has received critical acclaim, won various awards and is considered one of the best games of 2014. Following the release of additional campaigns, 
+        the original story received the retronym Shovel of Hope. The full game (released in December 2019) is referred to as Shovel Knight: Treasure Trove, which includes
+        three other campaigns: Plague of Shadows, Specter of Torment, and King of Cards, along with a multiplayer fighting game, Shovel Knight Showdown.</p>
+    </div>
+    <div id="phrase">VVVVVV</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/VVVVVV.png" class="descPic">
+      <p class="descText">VVVVVV is a 2010 puzzle-platform video game created by Terry Cavanagh. In the game, the player controls Captain Viridian,
+        who must rescue their spacecrew after a teleporter malfunction caused them to be separated in Dimension VVVVVV. 
+        The gameplay is characterized by the inability of the player to jump, instead opting on controlling the direction of gravity, causing the player to fall upwards or downwards.
+        The game consists of more than 400 individual rooms, and also supports the creation of user-created levels.</p>
+    </div>
+    <div id="phrase">Terraria</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Terraria.png" class="descPic">
+      <p class="descText">Terraria is an action-adventure sandbox game developed by Re-Logic. 
+        The game was initially released for Microsoft Windows on May 16, 2011, and has since been released for other PC, consoles, handhelds, and mobile platform.
+        Terraria features exploration, crafting, building, and combat with a variety of creatures in a procedurally generated 2D world.
+        Terraria received generally positive critical reception upon release and praise given to its sandbox elements. 
+        By May 2019, the game had sold over 27 million copies across all platforms.</p>
+      </div>
+    <div id="phrase">Owlboy</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Owlboy.png" class="descPic">
+      <p class="descText">Owlboy is a platform-adventure video game created by the Norwegian independent developer; D-Pad Studio. 
+        The player controls Otus, who is capable of flying and carrying objects during flight. These objects vary in use, 
+        but are mainly used as ranged weapons, thrown weapons, and puzzle-solving tools. As the game progresses,
+        Otus gains allies that accompany him during his journey, each having their own weapon with exclusive properties.</p>
+    </div>
+    <div id="phrase">World of Goo</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/World of Goo.png" class="descPic">
+      <p class="descText">World of Goo is a puzzle video game developed and published by independent game developer 2D Boy.
+        The game was released on Microsoft Windows and Wii platforms on October 13, 2008, with releases on Nintendo Switch,
+        Mac OS X, Linux, and various mobile devices in subsequent years. 
+        A physics-based puzzler, World of Goo has the player use small balls of goo to create bridges and similar structures
+        over chasms and obstacles to help other goo balls reach a goal point, with the challenge to use as few goo balls as possible to build this structure.</p>
+    </div>
+    <div id="phrase">Mini Metro</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Mini Metro.png" class="descPic">
+      <p class="descText">Mini Metro is a puzzle strategy video game developed by indie development team Dinosaur Polo Club. 
+        Players are tasked with constructing an efficient rail transit network for a rapidly growing city.
+        Stations are represented by differently shaped nodes and players can build tracks to connect them by drawing lines.
+        Levels are based on real cities and the appearance of stations and passengers is procedurally generated.
+        The game's visual style makes use of bold colours and simple geometry to replicate the appearance of modern transit maps.</p>
+    </div>
+    <div id="phrase">Dead Cells</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Dead Cells.png" class="descPic">
+      <p class="descText">Dead Cells is a roguelike-metroidvania video game developed and published by Motion Twin. 
+        Following about a year in early access, Dead Cells was released for Linux, macOS, Microsoft Windows, Nintendo Switch, PlayStation 4, and Xbox One on August 7, 2018.
+        In the game, the player takes the role of a slime-like creature that takes control of a corpse in a dungeon, through which they must fight their way out.
+        The player gains various weapons, treasure and other tools through exploration of the procedurally-generated levels to fight undead creatures within it.
+        Motion Twin was inspired by The Binding of Isaac in developing the game.
+      </p>
+    </div>
+    <div id="phrase">Overcooked</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Overcooked.png" class="descPic">
+      <p class="descText">Overcooked! is a cooking simulation game developed by Ghost Town Games and published by Team17. 
+        The game focuses on a local cooperative experience, where players control a number of chefs in kitchens filled with various obstacles and hazards to rapidly prepare meals to specific orders under a time limit. 
+        The game was released for Microsoft Windows, PlayStation 4, and Xbox One in 2016. 
+        A Nintendo Switch version was released on July 27, 2017.
+        Overcooked received positive reviews upon release,
+        and was nominated for four awards at the 13th British Academy Games Awards, eventually winning two for Best British Game and Best Family Game.
+        A sequel, Overcooked 2, was released in August 2018.
 
+      </p>
+    </div>
+    <div id="phrase">Stardew Valley</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Stardew Valley.png" class="descPic">
+      <p class="descText">Stardew Valley is a simulation role-playing video game developed by Eric "ConcernedApe" Barone. The game was initially released for Microsoft Windows in February 2016, with ports later being released for macOS, Linux, 
+        PlayStation 4, Xbox One, Nintendo Switch, PlayStation Vita, iOS, and Android.
+        In Stardew Valley, players take the role of a character who, 
+        to get away from the hustle of the city, takes over their deceased grandfather's dilapidated farm in a place known as Stardew Valley. 
+        Players can grow crops, raise livestock, craft goods, mine for ores, sell produce,
+        and socialize with the townsfolk.
+        The game also allows up to three other players to play together online.
+      </p>
+    </div>
+    <div id="phrase">Minecraft</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Minecraft.png" class="descPic">
+      <p class="descText">
+        Minecraft is a sandbox video game created by Swedish developer Markus Persson, released by Mojang in 2011 and purchased by Microsoft in 2014.
+        It is the single best-selling video game of all time, selling over 180 million copies across all platforms by late 2019, with over 112 million monthly active players.
+
+        In Minecraft, players explore an intentionally blocky, pixelated, procedurally-generated 3D world, and may discover and extract raw materials, craft tools, build structures or earthworks,
+        and, depending on game mode, can fight computer-controlled foes, as well as either cooperate with or compete against other players in the same world. 
+        These modes include a survival mode, in which players must acquire resources to build the world and maintain health, and a creative mode, where players have unlimited resources. 
+        In the Java Edition, players can modify the game with mods to create new gameplay mechanics, items, textures and assets.
+      </p>
+    </div>
+    <div id="phrase">Celeste</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Celeste.png" class="descPic">
+      <p class="descText">
+        Celeste is a platforming video game by Canadian video game developers Matt Thorson and Noel Berry, with art by the Brazilian studio MiniBoss. 
+        The game was originally created as a prototype in four days during a game jam, and later expanded into a full release.
+        Celeste was released in January 2018 on Microsoft Windows, Nintendo Switch, PlayStation 4, Xbox One, macOS, and Linux. 
+        A DLC chapter entitled "Farewell" was released on September 9, 2019.
+        Celeste is a platform game in which players control a girl named Madeline as she makes her way up a mountain while avoiding various deadly obstacles.
+        Along with jumping and climbing up walls for a limited amount of time, Madeline has the ability to perform a mid-air dash in the eight cardinal and intercardinal directions.
+      </p>
+    </div>
+    <div id="phrase">Cuphead</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Cuphead.png" class="descPic">
+      <p class="descText">
+        Cuphead is a 2017 run and gun video game developed and published by StudioMDHR. The game was inspired by the rubber hose style of animation used in cartoons of the 1930s,
+        such as the work of Fleischer Studios and Walt Disney Animation Studios, and sought to emulate their subversive and surrealist qualities.
+        Cuphead features one or two players taking control of animated characters Cuphead and his brother Mugman to fight through several levels that culminate in boss fights, 
+        in order to repay their debt to the devil.The game was praised for its art style and noted for its challenging difficulty. It was both a critical and commercial success,
+        winning several awards and selling over five million copies within two years. An animated series based on the game is in production by Netflix.
+      </p>
+    </div>
+    <div id="phrase">Untitled Goose Game</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Goose Game.png" class="descPic">
+      <p class="descText">
+        Untitled Goose Game is a 2019 puzzle–stealth video game developed by House House and published by Panic.
+        In the game, players control a goose who bothers the inhabitants of an English village.
+        The game was released for Microsoft Windows, macOS, Nintendo Switch,
+        PlayStation 4, and Xbox One. Untitled Goose Game originated from a stock photograph of a goose that a House House employee 
+        posted in the company's internal communications, as a joke. This sparked a conversation about geese, but the team put the 
+        idea aside for a few months until they realised that it had the potential to be a fun game. Inspired by Super Mario 64 and 
+        the Hitman series, House House worked on combining stealth mechanics with a lack of violence to create humorous in-game scenarios.      </p>
+    </div>
+    <div id="phrase">Undertale</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Undertale.png" class="descPic">
+      <p class="descText">
+        Undertale is a role-playing video game created by indie developer Toby Fox.
+        The player controls a child who has fallen into the Underground: a large, secluded region under the surface of the Earth,
+        separated by a magic barrier. The player meets various monsters during the journey back to the surface. Some monsters might 
+        engage the player in a fight. The combat system involves the player navigating through mini-bullet hell attacks by the opponent.
+        They can opt to pacify or subdue monsters in order to spare them instead of killing them. These choices affect the game, with the
+        dialogue, characters, and story changing based on outcomes.
+      </p>
+    </div>
+    <div id="phrase">Oxygen NOT Included</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Oxygen NOT Included.png" class="descPic">
+      <p class="descText">
+        Oxygen Not Included is a survival simulation video game developed and published by Klei Entertainment. 
+        After being released on Steam's early access since February 2017, the final version of the game was released on July 30, 2019.
+        The player is tasked with managing and taking care of duplicants as they try to survive and create a sustainable makeshift space colony.
+        The player must monitor the duplicants' hunger, waste, and oxygen levels to keep them alive. Each game's world is procedurally generated.
+        While initial areas include a breathable atmosphere, areas within the world are in a vacuum or lack oxygen, requiring proper preparation by the duplicants before they explore into these areas.
+      </p>
+    </div>
+    <div id="phrase">Rimworld</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Rimworld.png" class="descPic">
+      <p class="descText">
+        RimWorld is an indie top-down construction and management simulation video game by Montreal-based developer Ludeon Studios. Originally called Eclipse Colony,
+        it was initially released as a Kickstarter crowdfunding project in early access for Microsoft Windows, macOS, and Linux in November 2013, and was officially released on October 17, 2018.
+        The objective of the game is to ensure the survival of a colony of people, fighting against various environmental and/or internal events. Much of the difficulty as well as the critical
+        acclaim for the game come from its unpredictability, through randomly generated events, and its extensively designed and customizable world.
+      </p>
+    </div>
+    <div id="phrase">The Stanley Parable</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/The Stanley Parable.png" class="descPic">
+      <p class="descText">
+        The Stanley Parable is an interactive drama and walking simulator designed by American developer Davey Wreden. 
+        The game was originally released on July 27, 2011 as a free mod for Half-Life 2. Together with William Pugh, Wreden later released a stand-alone remake using the Source engine under the Galactic Cafe studio name. 
+        Later updates of the game added support for OS X on December 19, 2013, and for Linux on September 9, 2015.
+        The game has no combat or other action-based sequences. Instead, the gameplay involves guiding a silent protagonist 
+        named Stanley alongside narration by British actor Kevan Brighting. As the story progresses, the player is confronted with diverging pathways. The player may disobey the narrator's suggestions,
+        which will then be incorporated into the story.      </p>
+    </div>
+    
+    <div id="phrase">Slay the Spire</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Slay the Spire.png" class="descPic">
+      <p class="descText">
+        Slay the Spire is a roguelike video game developed by American studio MegaCrit and published by Humble Bundle.
+        The game was first released in early access for Microsoft Windows, macOS, and Linux in late 2017, with an official release in January 2019. 
+        It was released for PlayStation 4 in May 2019, for Nintendo Switch in June 2019 and for Xbox One in August 2019. Mobile versions for iOS and Android are planned for 2020.
+        In Slay the Spire, the player, through one of four characters, attempts to ascend a spire of multiple floors, created through procedural generation, battling through enemies and bosses.
+        Combat takes place through a collectible card game-based system, with the player gaining new cards as rewards from combat and other means, 
+        requiring the player to use strategies of deck-building games to construct an effective deck to complete the climb.
+        Slay the Spire has been well-received, including nominated for several accolades in 2019, and is considered the game that launched a number of roguelike deck-building games.
+        </p>
+    </div>
+    <div id="phrase">Baba is You</div>
+    <div id="phraseDesc" class="details">
+      <img src="assets/images/Baba is You.png" class="descPic">
+      <p class="descText">
+        Baba Is You is a puzzle video game created by Finnish indie developer Arvi Teikari (known professionally as Hempuli). It was released on 13 March 2019 for PC and Nintendo Switch.
+        The game centers around the manipulation of "rules"—represented by tiles with words written on them—in order to allow the titular character Baba (or some other object) to reach a specified goal.
+        The player, usually, controls a character known as Baba, with exceptions in some levels. Each level contains various movable word tiles, corresponding to specific types of objects and obstacles on the field, linking operators such as "is" and "and", and verb tiles reflecting the properties of these objects. 
+        The objective of each level is for the player to reach the goal by manipulating these tiles to create or modify "rules" by which they behave. 
+        For example, the goal can be changed by moving "is" and "win" blocks to another object, and the player can travel through objects by removing the "stop" trait from them.
+        Levels can force specific rules by placing their blocks in a corner, so they cannot be moved.
+      </p>
+    </div>
+  </div>
+   
   <footer></footer>
   <script src="assets/javascript/game.js"></script>
 </body>

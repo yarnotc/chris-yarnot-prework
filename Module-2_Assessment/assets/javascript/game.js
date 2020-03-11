@@ -2,7 +2,6 @@
 const MAXIMUM_GUESSES=  10; //number of wrong guesses before a loss
 const MAXIMUM_MANA= 10; //maximum number of stars on the magic bar 
 const MANA_HEIGHT= 24;  //height per mana.
-const HEART_WIDTH= 22;
 
 //document constants
 const docWinCounter=    document.querySelector("#wins");
@@ -128,7 +127,7 @@ const game = {
         //iterate 0->MAX_GUESSES
         
         //update the document
-        docHealthBar.style.width= (this.guessRemain* HEART_WIDTH) + "px";
+        docHealthBar.style.width= (this.guessRemain*100/MAXIMUM_GUESSES) + "%";
         //update remaining guesses counter
         docRemainCounter.innerText= " " + this.guessRemain + "/" + MAXIMUM_GUESSES;
         //update guessed letters
@@ -141,6 +140,13 @@ const game = {
     updateRight : function(){
         //convert word to displayable series of underscores/characters
         let str= this.currentWord.toHangman(this.rightLetters);
+        //add spacers to center the word vertically
+        if(str.indexOf(" ") == -1){
+            str= " "+ str;
+        }
+        if(str.indexOf(" ") == str.lastIndexOf(" ")){
+            str= str + " ";
+        }
         //convert word to pictures
         //update word display
         docWord.innerHTML= stringToHTML(str);
@@ -250,19 +256,13 @@ const game = {
 };
 //on startup
 
-//load words data from file? information
+//load words data from hidden index
+let phrases= document.querySelectorAll("#phrase");
+let phraseDescs= document.querySelectorAll("#phraseDesc");
+for(i= 0; i<phrases.length; i++){
+    game.possibleWords.push(new word(phrases[i].innerText, phraseDescs[i].innerHTML));
+}
 //initialize win/lose count (default values setup)
-var reader = new FileReader();
-reader.onload = function(event) {
-    var contents = event.target.result;
-    console.log("File contents: " + contents);
-};
-
-reader.onerror = function(event) {
-    console.error("File could not be read! Code " + event.target.error.code);
-};
-
-reader.readAsText("words");
 //add event listener
 window.addEventListener("keydown", onKeyDown);
 //(re)start game

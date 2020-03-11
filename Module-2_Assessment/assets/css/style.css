@@ -1,5 +1,5 @@
 
-body {
+body, .details {
     /*going for a similar astetic to the steam-store page to fit with the theme of indie games*/
     background-image: url(../images/background.png);
     /*a simple blue gradiant much like the steam store page*/
@@ -10,28 +10,52 @@ body {
     color: #bbbbbb;
     /*Arial and Helvetica Neue are both fonts you need to pay for*/
 }
-.magic_bar{
-    
+.letters{
+    height: 72px;
 }
 .magicWin {
     background-image: url(../images/win.png);
     width: 100%;
     background-position: top;
 }
+.hidden{
+    display: None;
+}
 .magicLose{
     background-image: url(../images/loss.png);
     width: 22px;
     background-position: top;
 }
+.health_bar{
+    top: 0;
+    right: 50px;
+    position: absolute;
+}
 .heartFull{
     background-image: url(../images/heart.png);
-    height: 21px;
+    background-size: 44px;
+    height: 44px;
     background-position: left;
 }
 .heartEmpty{
     background-image: url(../images/emptyheart.png);
-    width: 220px;
+    background-size: 44px;
+    width: 440px;
     background-position: left;
+}
+.letter{
+    width:45px;
+}
+.descPic{
+    max-height: 164px;
+    max-width: 25%;
+    margin: 0.5rem;
+    height: auto;
+    float: left;
+}
+.details{
+    overflow: auto;
+    
 }
 footer{
     position: fixed;
